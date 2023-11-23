@@ -29,10 +29,11 @@ const Banner = (props: BannerProps) => {
                 <div className={cx('banner__wrapper')}>
                     <div className={cx('banner__wrapper-left')}>
                         <BlackFriday className={cx('banner__BlackFriday')} />
-                        {/*<img className={cx('banner__arrow')} src="/images/png/arrow.png" alt="iphone"/>*/}
-                        <h1 className={cx('banner__title')}>Готовое приложение для вашей доставки за 2 дня</h1>
                         <p className={cx('banner__text')}>
-                            Наши клиенты увеличивают свой доход на 10-25% уже через 3 месяца
+                            Готовое приложение для вашей доставки за 2 дня
+                        </p>
+                        <p className={cx('banner__subText')}>
+                            Скидка <span>30%</span> на месячное обслуживание с оплатой на любой период
                         </p>
                         <Button children={"Оставить заявку"} onClick={handleOpenModal}/>
                     </div>
@@ -48,7 +49,7 @@ const Banner = (props: BannerProps) => {
                         <img className={cx('banner__iphone')} src="/images/png/iphone.png" alt="iphone"/>
                     </div>
                     <p className={cx('banner__disclaimer')}>
-                        *Рассчитать рост вашего дохода поможет наш финансовый аналитик
+                        *Черная пятница пройдёт с 24 по 30 ноября.
                     </p>
                 </div>
             </section>

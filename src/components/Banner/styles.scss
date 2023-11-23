@@ -16,6 +16,20 @@
     text-align: left;
   }
 
+  &__subText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      color: $primary;
+    }
+  }
+
+
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
@@ -33,7 +47,7 @@
       grid-row-gap: 20px;
 
       button {
-        max-width: 240px;
+        //max-width: 240px;
       }
     }
 

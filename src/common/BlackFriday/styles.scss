@@ -1,55 +1,12 @@
 @import '../../assets/layout/colors';
 
 .BlackFriday {
-  //&__wrapper {
-  //  border-radius: 50%;
-  //  padding: 20px;
-  //  width: 200px;
-  //  height: 200px;
-  //  display: flex;
-  //  flex-direction: column;
-  //  justify-content: center;
-  //  align-items: center;
-  //  animation: pulse 1.5s infinite;
-  //  background: linear-gradient(45deg, #000, #2a2a28);
-  //}
-  //
-  //&__title {
-  //  font-size: 50px;
-  //  font-weight: 700;
-  //  line-height: 1;
-  //  text-align: center;
-  //  text-transform: uppercase;
-  //  color: #fcd32f;
-  //  margin: 0;
-  //  opacity: 0;
-  //  animation: fadeIn 0.5s ease-out forwards;
-  //}
-  //
-  //&__percentage {
-  //  font-size: 48px;
-  //  opacity: 0;
-  //  animation: fadeIn 0.5s ease-out 0.5s forwards;
-  //}
-  //
-  //@keyframes fadeIn {
-  //  from {
-  //    opacity: 0;
-  //  }
-  //  to {
-  //    opacity: 1;
-  //  }
-  //}
-  //
-  //@keyframes pulse {
-  //  0% {
-  //    transform: scale(1);
-  //  }
-  //  50% {
-  //    transform: scale(1.1);
-  //  }
-  //  100% {
-  //    transform: scale(1);
-  //  }
-  //}
+  &__wrapper {
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
 }
