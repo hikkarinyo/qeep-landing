@@ -1,0 +1,14 @@
+@import '../../assets/layout/colors';
+
+.work-description {
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  &__title {
+    color: $secondary;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 30px 0;
+  }
+}

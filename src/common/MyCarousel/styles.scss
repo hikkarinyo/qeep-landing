@@ -1,0 +1,52 @@
+@import '../../assets/layout/colors.scss';
+
+.prevButton,
+.nextButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nextButton {
+  transform: rotate(-180deg);
+}
+
+.slick-prev, .slick-next {
+  width: 50px;
+  height: 50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-slide img {
+  margin: auto;
+  height: 100%;
+  max-height: 630px;
+  object-fit: contain;
+}
+
+.slick-prev::before, .slick-next::before {
+  display: none;
+}
+
+.sliderWrapper {
+  height: 600px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .slick-slide img {
+    width: 100%;
+  }
+
+  .prevButton.slick-arrow.slick-prev,
+  .nextButton.slick-arrow.slick-next {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../assets/layout/colors';
+
+.portfolio {
+  background-color: $secondary;
+  padding: 50px 0;
+
+  &__title {
+    color: $accent;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 50px 0;
+  }
+}

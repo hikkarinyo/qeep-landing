@@ -1,0 +1,179 @@
+@import '../../components/Header/styles';
+@import '../../components/Footer/styles';
+@import '../../components/Banner/styles';
+@import '../../components/AppTabs/styles';
+@import '../../components/Possibilities/styles';
+@import '../../common/Container/styles';
+@import '../../common/Button/styles';
+
+body {
+  color: $secondary;
+  background-color: $bg-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: 1400px) {
+    max-width: calc(100% - 68px);
+    padding: 0 30px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: calc(100% - 38px);
+    padding: 0 18px;
+  }
+
+  @media only screen and (max-width: 414px) {
+    max-width: 100%;
+    padding: 0 18px;
+  }
+
+  @media (max-width: 320px) {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.input-outline {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border: 1px solid $secondary;
+  background-color: transparent;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  transition: 0.5s ease;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &:focus {
+    border: 1px solid $secondary;
+  }
+
+  &__error {
+    border: 1px solid $error;
+
+    &:focus {
+      border: 1px solid $error;
+    }
+  }
+
+  &__message {
+    display: none;
+
+    &-error {
+      margin-top: 5px;
+      margin-left: 20px;
+      display: block;
+      color: $error;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}
+
+
+.textarea-outline {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid $secondary;
+  background-color: transparent;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  transition: 0.5s ease;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 100px;
+  resize: none;
+
+  &:focus {
+    border: 1px solid $secondary;
+  }
+
+  &__error {
+    border: 1px solid $error;
+
+    &:focus {
+      border: 1px solid $error;
+    }
+  }
+
+  &__message {
+    display: none;
+
+    &-error {
+      margin-top: 5px;
+      margin-left: 20px;
+      display: block;
+      color: $error;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}
+
+.input {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border: none;
+  border-bottom: 2px solid $border-color;
+  background-color: transparent;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  transition: 0.5s ease;
+  box-sizing: border-box;
+
+  &:focus {
+    border-bottom: 2px solid $border-color;
+  }
+
+  &__error {
+    border-bottom: 2px solid $error;
+
+    &:focus {
+      border-bottom: 2px solid $error;
+    }
+  }
+
+  &__message {
+    display: none;
+
+    &-error {
+      margin-top: 5px;
+      margin-left: 20px;
+      display: block;
+      color: $error;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}

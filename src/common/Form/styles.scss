@@ -1,0 +1,51 @@
+@import '../../assets/layout/colors';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 30px;
+  margin-top: 30px;
+
+  .button {
+    background: $primary;
+    border: none;
+    color: $accent;
+
+    &:hover,
+    &:active {
+      background-color: $link-hover-color;
+    }
+
+    &:disabled {
+      background-color: $button-bg-disabled-color;
+      border-color: $button-bg-disabled-color;
+      cursor: default;
+      color: $accent;
+    }
+  }
+
+  &__title {
+    color: $secondary;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__personal-information {
+    color: $secondary;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 300;
+    margin-top: 20px;
+  }
+
+  &__link {
+    color: $secondary;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+}

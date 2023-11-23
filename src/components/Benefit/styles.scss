@@ -1,0 +1,65 @@
+@import '../../assets/layout/colors';
+
+.benefit {
+  background-color: $secondary;
+  padding: 50px 0;
+
+  &__title {
+    color: $accent;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 50px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  &__card {
+    width: 270px;
+    background-color: $bg-black-card;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-row-gap: 15px;
+
+    &-icon {
+      width: 28px;
+    }
+
+    &-title {
+      color: $accent;
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 500;
+      white-space: pre-line;
+      width: min-content;
+    }
+
+    &-description {
+      color: $accent;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__card {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}

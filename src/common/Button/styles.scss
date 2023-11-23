@@ -1,0 +1,31 @@
+@import '../../assets/layout/colors';
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  background: $accent;
+  color: $secondary;
+  border: 1px solid $secondary;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  height: 55px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 13px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: $primary;
+    border-color: $primary;
+    color: $accent;
+  }
+
+  &:disabled {
+    background-color: $button-bg-disabled-color;
+    border-color: $button-bg-disabled-color;
+    cursor: default;
+    color: $accent;
+  }
+}

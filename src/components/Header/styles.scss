@@ -1,0 +1,144 @@
+@import '../../assets/layout/colors';
+
+.header {
+  height: 60px;
+  background-color: $header-bg-color;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  &__link-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    margin-left: 50px;
+    text-decoration: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+
+    &-link {
+      color: $secondary;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+
+      &.active {
+        color: green;
+      }
+    }
+  }
+}
+
+.mobileMenuButton,
+.headerMobileWrapper {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .header.mobile {
+    align-items: flex-start;
+    height: 100vh;
+    background-color: $accent;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__nav.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .header__wrapper.mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* burger and cross  START */
+  .mobileMenuButton {
+    display: flex;
+    width: 20px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+    margin: 0 20px;
+  }
+
+  .mobileMenuButton span {
+    background-color: $secondary;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+  }
+
+  .mobileMenuButton.active span:first-child,
+  .mobileMenuButton.active span:last-child {
+    top: 6px;
+    background-color: $secondary;
+  }
+
+  .mobileMenuButton.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobileMenuButton.active span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .mobileMenuButton.active span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .mobileMenuButton span:first-child {
+    top: 0;
+  }
+
+  .mobileMenuButton span:nth-child(2) {
+    top: 6px;
+  }
+
+  .mobileMenuButton span:last-child {
+    top: 12px;
+  }
+  /* burger and cross END */
+}

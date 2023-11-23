@@ -1,0 +1,25 @@
+@import '../../assets/layout/colors';
+
+.video-section {
+ margin: 100px 0;
+
+  &__title {
+    color: $secondary;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 46px;
+    margin: 0 0 50px;
+  }
+
+  &__wrapper {
+    display: flex;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__wrapper {
+      flex-direction: column;
+    }
+  }
+}

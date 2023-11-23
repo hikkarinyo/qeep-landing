@@ -1,0 +1,158 @@
+@import '../../assets/layout/colors';
+
+.banner {
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59px;
+    text-align: left;
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-column-gap: 50px;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    position: relative;
+
+    &-left {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      grid-row-gap: 20px;
+
+      button {
+        max-width: 240px;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: flex-end;
+      grid-column-gap: 20px;
+    }
+
+    &-arrow {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__video-overlay {
+    position: relative;
+    height: 684px;
+    width: 336px;
+    background-image: url('../../../public/images/png/iphone.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__iphone {
+    width: 278px;
+    height: 560px;
+  }
+
+  &__video {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 90%;
+    height: auto;
+    display: block;
+    border-radius: 35px;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 20%;
+    top: 5%;
+    max-width: 200px;
+    animation: arrowAnimation 2s infinite alternate;
+  }
+
+  &__disclaimer {
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  @media screen and (max-width: 1200px) {
+
+    .banner__title {
+      font-size: 36px;
+      line-height: 45px;
+    }
+
+    .banner__text {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &__arrow {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+
+    &__iphone {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    &__video-overlay {
+      height: 580px;
+      width: 280px;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      grid-template-areas: "right" "left";
+      grid-row-gap: 50px;
+
+      &-left {
+        grid-area: left;
+        justify-content: center;
+
+        button {
+          max-width: 100%;
+        }
+      }
+
+      &-right {
+        grid-area: right;
+        justify-content: center;
+      }
+
+    }
+  }
+}
+
+
+@keyframes arrowAnimation {
+  0% {
+    transform: scale(1) rotate(199deg);
+  }
+  50% {
+    transform: scale(0.5) rotate(199deg);
+  }
+  100% {
+    transform: scale(1) rotate(199deg);
+  }
+}
