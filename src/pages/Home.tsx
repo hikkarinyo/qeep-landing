@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Banner from '../components/Banner/Banner'
 import Benefit from '../components/Benefit/Benefit'
@@ -9,7 +11,6 @@ import Testimonials from '../components/Testimonials/Testimonials'
 import Portfolio from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
 import { Loader } from '../common/Loader/Loader'
-
 
 const Home = () => {
     const location = useLocation()
@@ -47,6 +48,7 @@ const Home = () => {
                     <Calculator id='calculator'/>
                     <Testimonials id='testimonials'/>
                     <VideoSection/>
+                    <ToastContainer autoClose={3000} />
                 </>
             }
         </>

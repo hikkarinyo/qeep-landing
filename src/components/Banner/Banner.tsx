@@ -4,6 +4,7 @@ import { Button } from '../../common/Button/Button'
 import { Modal } from '../../common/Modal/Modal'
 import Form from '../../common/Form/Form'
 import { BlackFriday } from '../../common/BlackFriday/BlackFriday'
+import { ToastContainer } from 'react-toastify'
 
 
 const cx = classNames.bind(require('./styles.scss'))

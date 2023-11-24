@@ -8,7 +8,7 @@ import { Button } from '../../common/Button/Button'
 import { Card } from '../../common/Card/Card'
 import InputMask from 'react-input-mask'
 import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
-
+import { Slide, toast } from 'react-toastify'
 
 const cx = classNames.bind(require('./styles.scss'))
 const schema = yup
@@ -29,7 +29,7 @@ const Calculator = (props: CalculatorProps) => {
     const [productsTotal, setProductsTotal] = useState(300)
     const [ordersTotal, setOrdersTotal] = useState(1500)
     const [totalPrice, setTotalPrice] = useState(0)
-    const [openModal, setOpenModal] = useState(false)
+    const [isDisabled, setIsDisabled] = useState(false)
 
     const {
         register, handleSubmit, formState: {errors},
@@ -38,10 +38,6 @@ const Calculator = (props: CalculatorProps) => {
         mode: 'onBlur',
         resolver: yupResolver(schema),
     })
-
-    const handleCloseModal = () => {
-        setOpenModal(false)
-    }
 
     // Количество филиалов
     const getSalePointsTotalPrice = (salePointsTotal: number) => {
@@ -113,10 +109,21 @@ const Calculator = (props: CalculatorProps) => {
                 method: 'POST',
                 body: formData
             })
-            setOpenModal(true)
             reset()
+            toast.success(
+                'Благодарим вас! Мы обязательно свяжемся с вами в ближайшее время.', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    transition: Slide
+                })
         } catch (error) {
-            console.log('Ошибка')
+            toast.error(
+                'Возникла ошибка при обработке вашей заявки. Пожалуйста, попробуйте ещё раз позже.', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    transition: Slide
+                })
+        }
+        finally {
+            setIsDisabled(false)
         }
     })
 
@@ -211,7 +218,7 @@ const Calculator = (props: CalculatorProps) => {
                                 />
                             </div>
                             <div className={cx('calculator__btn')}>
-                                <Button type='submit'>Отправить</Button>
+                                <Button type='submit' disabled={isDisabled}>Отправить</Button>
                                 <p className={cx('form__personal-information')}>
                                     Нажимая на кнопку, вы даете согласие на обработку
                                     <a href='#' className={cx('form__link')} target='_blank'>

@@ -59,7 +59,7 @@ export const MyCarousel = ({ images, children, autoplay, media }: SliderProps) =
                     <img key={index} src={`${image}`} alt='menu'/>
                 ))
                 : React.Children.map(children, (child, index) => (
-                        <div className={cx("sliderWrapper")} key={index}>{child}</div>
+                        <div className={cx('sliderWrapper')} key={index}>{child}</div>
                     ))
             }
         </Slider>

@@ -6,6 +6,7 @@ import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { FormProps } from '../types'
+import { toast, Slide } from 'react-toastify'
 
 
 const cx = classNames.bind(require('./styles.scss'))
@@ -43,8 +44,17 @@ const Form = ({onCloseModal}: FormProps) => {
             })
             reset()
             onCloseModal()
+            toast.success(
+                'Благодарим вас! Мы обязательно свяжемся с вами в ближайшее время.', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    transition: Slide
+                })
         } catch (error) {
-            console.log('Ошибка')
+            toast.error(
+                'Возникла ошибка при обработке вашей заявки. Пожалуйста, попробуйте ещё раз позже.', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    transition: Slide
+                })
         } finally {
             setIsDisabled(false)
         }
