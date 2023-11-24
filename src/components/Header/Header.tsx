@@ -1,15 +1,22 @@
-import classNames from "classnames"
+import { useEffect, useState } from 'react'
+import classNames from 'classnames'
 import { Link } from 'react-router-dom'
-import { SvgIcon } from "../../common/SvgIcon/SvgIcon"
-import Possibilities from "../Possibilities/Possibilities";
-import {useEffect, useState} from "react";
+import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
 
 
 const cx = classNames.bind(require('./styles.scss'))
 
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const navLinks = [
+        { to: '/#possibilities', text: 'Возможности' },
+        // Блоки пока недоделаны
+        // { to: '/#advantages', text: 'Преимущества' },
+        // { to: '/#workDescription', text: 'Как это работает' },
+        { to: '/#portfolio', text: 'Наши работы' },
+        { to: '/#calculator', text: 'Калькулятор' },
+        { to: '/#testimonials', text: 'Отзывы' },
+    ]
 
     const toggleMenuMobile = () => {
         setMobileMenuOpen(!isMobileMenuOpen)
@@ -19,49 +26,51 @@ const Header = () => {
         setMobileMenuOpen(false)
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.pageYOffset
-            if (scrollTop > 0) {
-                setIsScrolled(true)
-            } else {
-                setIsScrolled(false)
-            }
-        }
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 
+    useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.style.overflow = 'hidden'
         } else {
             document.body.style.overflow = ''
         }
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            document.body.style.overflow = ''
-        }
     }, [isMobileMenuOpen])
 
     return (
-        <header className={cx('header', { mobile: isMobileMenuOpen })}>
-            <div className={cx('header__wrapper', { mobile: isMobileMenuOpen })}>
-                <div className={cx('header__inner')}>
-                    <Link className={cx('header__link-logo')} to="/#" onClick={closeMobileMenu}>
-                        <SvgIcon className={cx('header__logo')} src={"/logo/logo-black.svg"} width={"50"}/>
-                    </Link>
-                    <button className={cx('mobileMenuButton', {active: isMobileMenuOpen})} onClick={toggleMenuMobile}>
+        <header className={cx('header', {mobile: isMobileMenuOpen})}>
+            <div className={cx('headerWrapper', {mobile: isMobileMenuOpen})}>
+                <div className={cx('headerInner')}>
+                    <div
+                        className={cx('headerLinkLogo')}
+                        onClick={() => {
+                            closeMobileMenu()
+                            scrollToTop()
+                        }}
+                    >
+                        <SvgIcon className={cx('headerLogo')} src='/logo/logo-black.svg' width='50'/>
+                    </div>
+                    <button
+                        className={cx('mobileMenuButton', {active: isMobileMenuOpen})}
+                        onClick={toggleMenuMobile}
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
                 </div>
-                <nav className={cx('header__nav', 'container', { mobile: isMobileMenuOpen })}>
-                    <Link to="/#possibilities" className={cx('header__nav-link')}>Возможности</Link>
-                    {/*<Link to="/#advantages" className={cx('header__nav-link')}>Преимущества</Link>*/}
-                    {/*<Link to="/#workDescription" className={cx('header__nav-link')}>Как это работает</Link>*/}
-                    <Link to="/#portfolio" className={cx('header__nav-link')}>Наши работы</Link>
-                    <Link to="/#calculator" className={cx('header__nav-link')}>Калькулятор</Link>
-                    <Link to="/#testimonials" className={cx('header__nav-link')}>Отзывы</Link>
+                <nav className={cx('headerNav', 'container', {mobile: isMobileMenuOpen})}>
+                    {navLinks.map((link, index) => (
+                        <Link
+                            key={index}
+                            to={link.to}
+                            className={cx('headerNavLink')}
+                            onClick={closeMobileMenu}
+                        >
+                            {link.text}
+                        </Link>
+                    ))}
                 </nav>
             </div>
         </header>
