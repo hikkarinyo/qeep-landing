@@ -21,6 +21,12 @@ const VideoSection = () => {
         <>
             <section className={cx('video-section')}>
                 <div className={cx('container', 'video-section__wrapper')}>
+                    <div className={cx('video-section__action')}>
+                        <h1 className={cx('video-section__title')}>
+                            Мы зарабатываем тогда, когда зарабатывают наши клиенты!
+                        </h1>
+                        <Button children='Оставить заявку' onClick={handleOpenModal}/>
+                    </div>
                     <iframe
                         width='100%' height='315'
                         src='https://www.youtube.com/embed/OLCZhDFgej8?si=pL4IQasakf9igXLu'
@@ -29,12 +35,6 @@ const VideoSection = () => {
                         allowFullScreen
                     >
                     </iframe>
-                    <div className={cx('video-section__action')}>
-                        <h1 className={cx('video-section__title')}>
-                            Мы зарабатываем тогда, когда зарабатывают наши клиенты!
-                        </h1>
-                        <Button children='Оставить заявку' onClick={handleOpenModal}/>
-                    </div>
                 </div>
             </section>
             <Modal isOpen={isOpen} onClose={handleCloseModal}>
