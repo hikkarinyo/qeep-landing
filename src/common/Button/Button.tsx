@@ -1,5 +1,5 @@
-import { ButtonProps } from "../types"
-import classNames from "classnames"
+import { ButtonProps } from '../types'
+import classNames from 'classnames'
 
 
 const cx = classNames.bind(require('./styles.scss'))

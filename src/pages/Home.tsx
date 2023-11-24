@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
-import Banner from "../components/Banner/Banner";
-import Benefit from "../components/Benefit/Benefit";
-import Possibilities from "../components/Possibilities/Possibilities";
-import AppTabs from "../components/AppTabs/AppTabs";
-import WorkDescription from "../components/WorkDescription/WorkDescription";
-import Calculator from "../components/Calculator/Calculator";
-import Testimonials from "../components/Testimonials/Testimonials";
+import Banner from '../components/Banner/Banner'
+import Benefit from '../components/Benefit/Benefit'
+import Possibilities from '../components/Possibilities/Possibilities'
+import Calculator from '../components/Calculator/Calculator'
+import Testimonials from '../components/Testimonials/Testimonials'
 import Portfolio from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
-import {useLocation} from "react-router-dom";
 
 
 const Home = () => {
@@ -35,14 +33,15 @@ const Home = () => {
 
     return (
         <>
-            <Banner id="banner"/>
-            <Benefit id="benefit"/>
-            <Possibilities id="possibilities"/>
-            {/*<AppTabs id="advantages/>*/}
-            {/*<WorkDescription id="workDescription"/>*/}
-            <Portfolio id="portfolio"/>
-            <Calculator id="calculator"/>
-            <Testimonials id="testimonials"/>
+            <Banner id='banner'/>
+            <Benefit id='benefit'/>
+            <Possibilities id='possibilities'/>
+            {/*Блок пока недоделаны*/}
+            {/*<AppTabs id='advantages/>*/}
+            {/*<WorkDescription id='workDescription'/>*/}
+            <Portfolio id='portfolio'/>
+            <Calculator id='calculator'/>
+            <Testimonials id='testimonials'/>
             <VideoSection/>
         </>
     )

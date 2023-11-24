@@ -1,8 +1,8 @@
+import React from 'react'
 import Slider from '@mui/material/Slider'
-import { styled } from "@mui/material"
-import {MySliderProps} from "../types";
-import classNames from "classnames";
-import React from "react";
+import { styled } from '@mui/material'
+import { MySliderProps } from '../types'
+import classNames from 'classnames'
 
 
 const cx = classNames.bind(require('./styles.scss'))
@@ -54,19 +54,19 @@ const MySlider = ({ label, min, max, step, onChange, defaultValue, value }: MySl
 
     const handleChange = (event: Event, value: number | number[], activeThumb: number)  => {
         if (typeof value === 'number' && onChange) {
-            onChange(value);
+            onChange(value)
         }
-    };
+    }
 
     return (
         <>
             <p className={cx('my-slider__label')}>{label}</p>
             <CustomSlider
-                size="small"
+                size='small'
                 min={min}
                 step={step}
                 max={max}
-                valueLabelDisplay="auto"
+                valueLabelDisplay='auto'
                 marks={marks}
                 onChange={handleChange}
                 defaultValue={defaultValue}

@@ -1,10 +1,10 @@
-import classNames from "classnames";
-import { SvgIcon } from "../../common/SvgIcon/SvgIcon"
+import classNames from 'classnames'
+import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
 
-const cx = classNames.bind(require('./styles.scss'));
+const cx = classNames.bind(require('./styles.scss'))
 
 interface WorkDescriptionProps {
-    id: string;
+    id: string
 }
 
 const WorkDescription = (props: WorkDescriptionProps) => {
@@ -14,7 +14,7 @@ const WorkDescription = (props: WorkDescriptionProps) => {
             <div  className={cx('container')}>
                 <h1 className={cx('work-description__title')}>Как это работает</h1>
             </div>
-            <SvgIcon src={'result.svg'}/>
+            <SvgIcon src='result.svg'/>
         </section>
 
     )

@@ -1,4 +1,4 @@
-import { SvgIconProps } from "../types"
+import { SvgIconProps } from '../types'
 
 export const SvgIcon = ({ src, width, height, className }: SvgIconProps) => {
     if (src === null) {

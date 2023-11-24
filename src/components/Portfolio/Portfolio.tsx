@@ -1,10 +1,10 @@
-import classNames from "classnames"
-import {MyCarousel} from '../../common/MyCarousel/MyCarousel'
+import classNames from 'classnames'
+import { MyCarousel } from '../../common/MyCarousel/MyCarousel'
 
 const cx = classNames.bind(require('./styles.scss'))
 
 interface PortfolioProps {
-    id: string;
+    id: string
 }
 
 const Portfolio = (props: PortfolioProps) => {
@@ -23,7 +23,7 @@ const Portfolio = (props: PortfolioProps) => {
         <section id={props.id} className={cx('portfolio')}>
             <div className={cx('portfolio__wrapper', 'container')}>
                 <h1 className={cx('portfolio__title')}>Наши работы</h1>
-                <MyCarousel media={"425"} autoplay={true} images={images}/>
+                <MyCarousel media='425' autoplay={true} images={images}/>
             </div>
         </section>
 

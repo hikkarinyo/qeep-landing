@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import classNames from "classnames";
-import MySlider from "../../common/Slider/MySlider";
-import * as yup from "yup";
-import {Controller, useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {Button} from "../../common/Button/Button";
-import {Card} from "../../common/Card/Card"
-import InputMask from "react-input-mask";
-import {SvgIcon} from "../../common/SvgIcon/SvgIcon";
-import {Modal} from "../../common/Modal/Modal";
-import Done from "../../common/Done/Done";
+import React, { useEffect, useState } from 'react'
+import classNames from 'classnames'
+import MySlider from '../../common/Slider/MySlider'
+import * as yup from 'yup'
+import { Controller, useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { Button } from '../../common/Button/Button'
+import { Card } from '../../common/Card/Card'
+import InputMask from 'react-input-mask'
+import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
 
 
 const cx = classNames.bind(require('./styles.scss'))
@@ -23,7 +21,7 @@ const schema = yup
     })
 
 interface CalculatorProps {
-    id: string;
+    id: string
 }
 
 const Calculator = (props: CalculatorProps) => {
@@ -37,7 +35,7 @@ const Calculator = (props: CalculatorProps) => {
         register, handleSubmit, formState: {errors},
         reset, control
     } = useForm({
-        mode: "onBlur",
+        mode: 'onBlur',
         resolver: yupResolver(schema),
     })
 
@@ -102,7 +100,7 @@ const Calculator = (props: CalculatorProps) => {
         formData.append('companyName', data.companyName)
         formData.append('comment',
             `
-            Компания: "${data.companyName}".
+            Компания: '${data.companyName}'.
             Количество филиалов: ${salePointsTotal}.
             Позиции в каталоге: ${productsTotal}.
             Количество заказов в месяц: ${ordersTotal}.
@@ -134,9 +132,9 @@ const Calculator = (props: CalculatorProps) => {
                                     {/*TODO: вынести input отдельно*/}
                                     <input
                                         className={cx('input-outline', {'input-outline__error': errors.name?.message})}
-                                        {...register("name")}
-                                        name={"name"}
-                                        placeholder={"Имя"}
+                                        {...register('name')}
+                                        name={'name'}
+                                        placeholder={'Имя'}
                                     />
                                     <p className={cx('input-outline__message', {'input-outline__message-error': errors.name?.message})}>
                                         {errors.name?.message}
@@ -145,13 +143,13 @@ const Calculator = (props: CalculatorProps) => {
                                 <div>
                                     <Controller
                                         control={control}
-                                        name="phone"
-                                        defaultValue={""}
+                                        name='phone'
+                                        defaultValue={''}
                                         render={({ field: { onChange, value } }) => (
                                             <InputMask
                                                 className={cx('input-outline', {'input-outline__error': errors.phone?.message})}
-                                                mask="+7 (999) 999-99-99"
-                                                placeholder="Телефон"
+                                                mask='+7 (999) 999-99-99'
+                                                placeholder='Телефон'
                                                 onChange={onChange}
                                                 value={value}
                                             />
@@ -165,9 +163,9 @@ const Calculator = (props: CalculatorProps) => {
                                     {/*TODO: вынести input отдельно*/}
                                     <input
                                         className={cx('input-outline', {'input-outline__error': errors.companyName?.message})}
-                                        {...register("companyName")}
-                                        name={"companyName"}
-                                        placeholder={"Название компании"}
+                                        {...register('companyName')}
+                                        name={'companyName'}
+                                        placeholder={'Название компании'}
                                     />
                                     <p className={cx('input-outline__message', {'input-outline__message-error': errors.companyName?.message})}>
                                         {errors.companyName?.message}
@@ -177,9 +175,9 @@ const Calculator = (props: CalculatorProps) => {
                                     {/*TODO: вынести input отдельно*/}
                                     <textarea
                                         className={cx('textarea-outline', {'textarea-outline__error': errors.comment?.message})}
-                                        {...register("comment")}
-                                        name={"comment"}
-                                        placeholder={"Комментарий"}
+                                        {...register('comment')}
+                                        name={'comment'}
+                                        placeholder={'Комментарий'}
                                     />
                                     <p className={cx('textarea-outline__message', {'textarea-outline__message-error': errors.comment?.message})}>
                                         {errors.comment?.message}
@@ -191,7 +189,7 @@ const Calculator = (props: CalculatorProps) => {
                                     min={1}
                                     max={10}
                                     step={1}
-                                    label="Количество филиалов"
+                                    label='Количество филиалов'
                                     onChange={handleSalePointsChange}
                                     defaultValue={5}
                                 />
@@ -199,7 +197,7 @@ const Calculator = (props: CalculatorProps) => {
                                     min={10}
                                     max={1000}
                                     step={10}
-                                    label="Сколько позиций в каталоге?"
+                                    label='Сколько позиций в каталоге?'
                                     onChange={handleProductsChange}
                                     defaultValue={300}
                                 />
@@ -207,16 +205,16 @@ const Calculator = (props: CalculatorProps) => {
                                     min={100}
                                     max={10000}
                                     step={100}
-                                    label="Количество заказов в месяц"
+                                    label='Количество заказов в месяц'
                                     onChange={handleOrdersChange}
                                     defaultValue={1500}
                                 />
                             </div>
                             <div className={cx('calculator__btn')}>
-                                <Button type="submit">Отправить</Button>
+                                <Button type='submit'>Отправить</Button>
                                 <p className={cx('form__personal-information')}>
                                     Нажимая на кнопку, вы даете согласие на обработку
-                                    <a href="#" className={cx('form__link')} target="_blank">
+                                    <a href='#' className={cx('form__link')} target='_blank'>
                                         персональных данных
                                     </a>
                                 </p>
@@ -225,11 +223,12 @@ const Calculator = (props: CalculatorProps) => {
                     </Card>
                     <div className={cx('calculator__card-right')}>
                         <Card className={cx('calculator__card')}>
-                            <h1 className={cx('calculator__total-price')}>от <br/>{totalPrice.toLocaleString()}<br/>руб/мес
+                            <h1 className={cx('calculator__total-price')}>
+                                от <br/>{totalPrice.toLocaleString()}<br/>руб/мес
                             </h1>
                         </Card>
                         <Card className={cx('calculator__card', 'calculator__card-image')}>
-                            <SvgIcon src={"/donermaster/catalog-half.svg"}/>
+                            <SvgIcon src='/donermaster/catalog-half.svg'/>
                         </Card>
                     </div>
                 </div>

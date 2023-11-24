@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler} from "react"
+import React from 'react'
 
 export interface SvgIconProps {
     src: string
@@ -10,12 +10,8 @@ export interface SvgIconProps {
 export interface ButtonProps {
     children: React.ReactNode
     onClick?: () => void
-    type?: "button" | "submit" | "reset"
+    type?: 'button' | 'submit' | 'reset'
     disabled?: boolean
-}
-
-export interface ContainerProps {
-    children: React.ReactNode
 }
 
 export interface CardProps {
@@ -52,4 +48,3 @@ export interface FormProps {
 export interface BlackFridayProps {
     className?: string
 }
-
