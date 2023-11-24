@@ -10,22 +10,22 @@ interface BenefitProps {
 const Benefit = (props: BenefitProps) => {
     const benefitCards = [
         {
-            iconSrc: '/images/png/card.png',
+            iconSrc: '/images/icon/cart-icon.svg',
             title: 'Рост заказов',
             description: 'Увеличивается прибыль с заказов на доставку в мобильном приложении на 25%',
         },
         {
-            iconSrc: '/images/png/money.png',
+            iconSrc: '/images/icon/money-icon.svg',
             title: 'Рост выручки',
             description: 'Выручка наших клиентов в среднем вырастает на 12-18%, даже если до этого они сотрудничали с агрегаторами',
         },
         {
-            iconSrc: '/images/png/people.png',
+            iconSrc: '/images/icon/people-icon.svg',
             title: 'Курс на молодёжь',
             description: 'Более 80% молодёжи предпочитают использовать смартфон для заказа еды',
         },
         {
-            iconSrc: '/images/png/chart.png',
+            iconSrc: '/images/icon/chart-icon.svg',
             title: 'Увеличение рентабельности',
             description: 'До 60% заказов будут приходить с помощью собственного мобильного приложения уже через 3 месяца',
         },

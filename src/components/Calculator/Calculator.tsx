@@ -228,7 +228,7 @@ const Calculator = (props: CalculatorProps) => {
                             </h1>
                         </Card>
                         <Card className={cx('calculator__card', 'calculator__card-image')}>
-                            <SvgIcon src='/donermaster/catalog-half.svg'/>
+                            <SvgIcon src='/donermaster/catalog-half.png'/>
                         </Card>
                     </div>
                 </div>

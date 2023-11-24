@@ -46,7 +46,7 @@ const Banner = (props: BannerProps) => {
                                 />
                             </video>
                         </div>
-                        <img className={cx('banner__iphone')} src='/images/png/iphone.png' alt='iphone'/>
+                        <img className={cx('banner__iphone')} src='/images/rebro/pre-loader.png' alt='iphone'/>
                     </div>
                     <p className={cx('banner__disclaimer')}>
                         *Черная пятница пройдёт с 24 по 30 ноября.
