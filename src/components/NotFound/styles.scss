@@ -1,0 +1,33 @@
+@import '../../assets/colors';
+
+.not-found {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: $secondary;
+
+  &__title {
+    color: $accent;
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__sub-title {
+    color: $accent;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 375px) {
+
+    &__title {
+      font-size: 100px;
+    }
+  }
+}
