@@ -3,10 +3,15 @@
 .not-found {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
   height: 100vh;
-  background-color: $secondary;
+  background: $secondary;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
   &__title {
     color: $accent;
@@ -20,8 +25,20 @@
     color: $accent;
     font-size: 24px;
     font-weight: 400;
-    margin-top: 10px;
     text-align: center;
+    margin: 10px 0;
+  }
+
+  &__link {
+    color: $accent;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
   }
 
   @media screen and (max-width: 375px) {
