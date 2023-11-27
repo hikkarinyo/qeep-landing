@@ -2,16 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
-        alias: {
-            '@images': path.resolve(__dirname, '..', 'public/images'),
-            '@favicons': path.resolve(__dirname, '..', 'public/favicons'),
-            '@doc': path.resolve(__dirname, '..', 'public/doc'),
-        },
+        alias: {'@images': path.resolve(__dirname, '..', './public/images')},
     },
     module: {
         rules: [
@@ -74,19 +69,16 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: '@images',
+                    from: path.resolve(__dirname, '..', './public/images'),
                     to: path.resolve(__dirname, '..', './build/images'),
-                    noErrorOnMissing: true
                 },
                 {
-                    from: '@favicons',
+                    from: path.resolve(__dirname, '..', './public/favicons'),
                     to: path.resolve(__dirname, '..', './build/favicons'),
-                    noErrorOnMissing: true
                 },
                 {
-                    from: '@doc',
+                    from: path.resolve(__dirname, '..', './public/doc'),
                     to: path.resolve(__dirname, '..', './build/doc'),
-                    noErrorOnMissing: true
                 },
             ]
         })
