@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
-import InputMask from 'react-input-mask'
 import { Button } from '../Button/Button'
-import { Controller, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
 import { FormProps } from '../types'
 import { toast, Slide } from 'react-toastify'
+import { MyInput } from '../MyInput/MyInput'
+import { MyPhoneInput } from '../MyInput/MyPhoneInput'
+import { sendApplication } from '../../api'
+import { schema } from '../../helpers/validation'
 
 
 const cx = classNames.bind(require('./styles.scss'))
-
-const schema = yup
-    .object({
-        name: yup.string().required('Обязательное поле'),
-        phone: yup.string().required('Обязательное поле'),
-        companyName: yup.string().required('Обязательное поле'),
-        comment: yup.string(),
-    })
 
 const Form = ({onCloseModal}: FormProps) => {
     const {
@@ -38,10 +32,7 @@ const Form = ({onCloseModal}: FormProps) => {
 
         try {
             setIsDisabled(true)
-            await fetch('https://demo.qeep.pro/process/application', {
-                method: 'POST',
-                body: formData
-            })
+            await sendApplication(formData)
             reset()
             onCloseModal()
             toast.success(
@@ -71,58 +62,39 @@ const Form = ({onCloseModal}: FormProps) => {
         <>
             <h1 className={cx('form__title')}>Отправить заявку</h1>
             <form className={cx('form')} onSubmit={submit}>
-                <div>
-                    {/*TODO: вынести input отдельно*/}
-                    <input
-                        className={cx('input', {'input__error': errors.name?.message})}
-                        {...register('name')}
-                        name={'name'}
-                        placeholder={'Имя'}
-                    />
-                    <p className={cx('input__message', {'input__message-error': errors.name?.message})}>
-                        {errors.name?.message}
-                    </p>
-                </div>
-                <div>
-                    <Controller
-                        control={control}
-                        name='phone'
-                        defaultValue={''}
-                        render={({field: {onChange, value}}) => (
-                            <InputMask
-                                className={cx('input', {'input__error': errors.phone?.message})}
-                                mask='+7 (999) 999-99-99'
-                                placeholder='Телефон'
-                                onChange={onChange}
-                                value={value}
-                            />
-                        )}
-                    />
-                    <p className={cx('input__message', {'input__message-error': errors.phone?.message})}>
-                        {errors.phone?.message}
-                    </p>
-                </div>
-                <div>
-                    <input
-                        className={cx('input', {'input__error': errors.companyName?.message})}
-                        {...register('companyName')}
-                        name={'companyName'}
-                        placeholder={'Название компании'}
-                    />
-                    <p className={cx('input__message', {'input__message-error': errors.companyName?.message})}>
-                        {errors.companyName?.message}
-                    </p>
-                </div>
-                <input
-                    className={cx('input')}
-                    {...register('comment')}
-                    name={'comment'}
-                    placeholder={'Комментарий'}
+                <MyInput
+                    label='Имя'
+                    name='name'
+                    register={register}
+                    error={errors.name?.message}
+                    variant='input'
+                />
+                <MyPhoneInput
+                    label='Телефон'
+                    name='phone'
+                    mask='+7 (999) 999-99-99'
+                    control={control}
+                    error={errors.phone?.message}
+                    variant='input'
+                />
+                <MyInput
+                    label='Название компании'
+                    name='companyName'
+                    register={register}
+                    error={errors.companyName?.message}
+                    variant='input'
+                />
+                <MyInput
+                    label='Комментарий'
+                    name='comment'
+                    register={register}
+                    error={errors.comment?.message}
+                    variant='input'
                 />
                 <Button disabled={isDisabled} type='submit'>Отправить</Button>
                 <p className={cx('form__personal-information')}>
                     Нажимая на кнопку, вы даете согласие на обработку
-                    <a href='#' className={cx('form__link')} target='_blank'>персональных данных</a>
+                    <a href='/doc/privacy-policy.pdf' className={cx('form__link')} target='_blank'>персональных данных</a>
                 </p>
             </form>
         </>

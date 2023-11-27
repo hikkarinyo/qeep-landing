@@ -48,3 +48,24 @@ export interface FormProps {
 export interface BlackFridayProps {
     className?: string
 }
+
+export interface InputProps {
+    label: string
+    value?: string
+    name: string
+    error?: string
+    register?: any
+    onChange?: () => void
+    variant: "input" | "outline" | "textarea"
+}
+
+export interface PhoneInputProps {
+    label: string
+    value?: string
+    name: string
+    mask: string
+    error?: string
+    control?: any
+    onChange?: () => void
+    variant: "input" | "outline"
+}

@@ -7,6 +7,11 @@ module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            '@images': path.resolve(__dirname, '..', 'public/images'),
+            '@favicons': path.resolve(__dirname, '..', 'public/favicons'),
+            '@doc': path.resolve(__dirname, '..', 'public/doc'),
+        },
     },
     module: {
         rules: [
@@ -21,7 +26,27 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'resolve-url-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.css$/i,
@@ -40,6 +65,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '..', './build'),
         filename: 'bundle.js',
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -48,13 +74,18 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, '..', './public/images'),
+                    from: '@images',
                     to: path.resolve(__dirname, '..', './build/images'),
                     noErrorOnMissing: true
                 },
                 {
-                    from: path.resolve(__dirname, '..', './public/favicons'),
+                    from: '@favicons',
                     to: path.resolve(__dirname, '..', './build/favicons'),
+                    noErrorOnMissing: true
+                },
+                {
+                    from: '@doc',
+                    to: path.resolve(__dirname, '..', './build/doc'),
                     noErrorOnMissing: true
                 },
             ]

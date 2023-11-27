@@ -1,4 +1,4 @@
-@import '../../assets/layout/colors';
+@import '../../assets/colors';
 
 .banner {
 
@@ -67,7 +67,7 @@
     position: relative;
     height: 684px;
     width: 336px;
-    background-image: url('../../../public/images/rebro/pre-loader.png');
+    background-image: url('~@images/rebro/pre-loader.png');
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;

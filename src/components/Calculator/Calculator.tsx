@@ -9,6 +9,8 @@ import { Card } from '../../common/Card/Card'
 import InputMask from 'react-input-mask'
 import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
 import { Slide, toast } from 'react-toastify'
+import {MyInput} from "../../common/MyInput/MyInput";
+import {MyPhoneInput} from "../../common/MyInput/MyPhoneInput";
 
 const cx = classNames.bind(require('./styles.scss'))
 const schema = yup
@@ -135,61 +137,35 @@ const Calculator = (props: CalculatorProps) => {
                     <Card className={cx('calculator__card')}>
                         <form className={cx('calculator__form')} onSubmit={submit}>
                             <div className={cx('calculator__inputs')}>
-                                <div>
-                                    {/*TODO: вынести input отдельно*/}
-                                    <input
-                                        className={cx('input-outline', {'input-outline__error': errors.name?.message})}
-                                        {...register('name')}
-                                        name={'name'}
-                                        placeholder={'Имя'}
-                                    />
-                                    <p className={cx('input-outline__message', {'input-outline__message-error': errors.name?.message})}>
-                                        {errors.name?.message}
-                                    </p>
-                                </div>
-                                <div>
-                                    <Controller
-                                        control={control}
-                                        name='phone'
-                                        defaultValue={''}
-                                        render={({ field: { onChange, value } }) => (
-                                            <InputMask
-                                                className={cx('input-outline', {'input-outline__error': errors.phone?.message})}
-                                                mask='+7 (999) 999-99-99'
-                                                placeholder='Телефон'
-                                                onChange={onChange}
-                                                value={value}
-                                            />
-                                        )}
-                                    />
-                                    <p className={cx('input-outline__message', {'input-outline__message-error': errors.phone?.message})}>
-                                        {errors.phone?.message}
-                                    </p>
-                                </div>
-                                <div>
-                                    {/*TODO: вынести input отдельно*/}
-                                    <input
-                                        className={cx('input-outline', {'input-outline__error': errors.companyName?.message})}
-                                        {...register('companyName')}
-                                        name={'companyName'}
-                                        placeholder={'Название компании'}
-                                    />
-                                    <p className={cx('input-outline__message', {'input-outline__message-error': errors.companyName?.message})}>
-                                        {errors.companyName?.message}
-                                    </p>
-                                </div>
-                                <div>
-                                    {/*TODO: вынести input отдельно*/}
-                                    <textarea
-                                        className={cx('textarea-outline', {'textarea-outline__error': errors.comment?.message})}
-                                        {...register('comment')}
-                                        name={'comment'}
-                                        placeholder={'Комментарий'}
-                                    />
-                                    <p className={cx('textarea-outline__message', {'textarea-outline__message-error': errors.comment?.message})}>
-                                        {errors.comment?.message}
-                                    </p>
-                                </div>
+                                <MyInput
+                                    label='Имя'
+                                    name='name'
+                                    register={register}
+                                    error={errors.name?.message}
+                                    variant='outline'
+                                />
+                                <MyPhoneInput
+                                    label='Телефон'
+                                    name='phone'
+                                    mask='+7 (999) 999-99-99'
+                                    control={control}
+                                    error={errors.phone?.message}
+                                    variant='outline'
+                                />
+                                <MyInput
+                                    label='Название компании'
+                                    name='companyName'
+                                    register={register}
+                                    error={errors.companyName?.message}
+                                    variant='outline'
+                                />
+                                <MyInput
+                                    label='Комментарий'
+                                    name='comment'
+                                    register={register}
+                                    error={errors.comment?.message}
+                                    variant='textarea'
+                                />
                             </div>
                             <div className={cx('calculator__sliders')}>
                                 <MySlider
@@ -221,7 +197,7 @@ const Calculator = (props: CalculatorProps) => {
                                 <Button type='submit' disabled={isDisabled}>Отправить</Button>
                                 <p className={cx('form__personal-information')}>
                                     Нажимая на кнопку, вы даете согласие на обработку
-                                    <a href='#' className={cx('form__link')} target='_blank'>
+                                    <a href='/doc/privacy-policy.pdf' className={cx('form__link')} target='_blank'>
                                         персональных данных
                                     </a>
                                 </p>
