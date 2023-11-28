@@ -8,7 +8,7 @@ import { toast, Slide } from 'react-toastify'
 import { MyInput } from '../MyInput/MyInput'
 import { MyPhoneInput } from '../MyInput/MyPhoneInput'
 import { sendApplication } from '../../api'
-import { schema } from '../../helpers/validation'
+import { schemaForm } from '../../helpers/validation'
 
 
 const cx = classNames.bind(require('./styles.scss'))
@@ -19,7 +19,7 @@ const Form = ({onCloseModal}: FormProps) => {
         reset, control
     } = useForm({
         mode: 'onBlur',
-        resolver: yupResolver(schema),
+        resolver: yupResolver(schemaForm),
     })
     const [isDisabled, setIsDisabled] = useState(false)
 

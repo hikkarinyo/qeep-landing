@@ -1,26 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import MySlider from '../../common/Slider/MySlider'
-import * as yup from 'yup'
-import { Controller, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Button } from '../../common/Button/Button'
 import { Card } from '../../common/Card/Card'
-import InputMask from 'react-input-mask'
 import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
 import { Slide, toast } from 'react-toastify'
-import {MyInput} from "../../common/MyInput/MyInput";
-import {MyPhoneInput} from "../../common/MyInput/MyPhoneInput";
+import { MyInput } from '../../common/MyInput/MyInput'
+import { MyPhoneInput } from '../../common/MyInput/MyPhoneInput'
+import { sendApplication } from '../../api'
+import { schemaCalculator } from '../../helpers/validation'
 
 const cx = classNames.bind(require('./styles.scss'))
-const schema = yup
-    .object({
-        name: yup.string().required('Обязательное поле'),
-        phone: yup.string().required('Обязательное поле'),
-        companyName: yup.string().required('Обязательное поле'),
-        comment: yup.string(),
-        salePoints: yup.number(),
-    })
 
 interface CalculatorProps {
     id: string
@@ -38,7 +30,7 @@ const Calculator = (props: CalculatorProps) => {
         reset, control
     } = useForm({
         mode: 'onBlur',
-        resolver: yupResolver(schema),
+        resolver: yupResolver(schemaCalculator),
     })
 
     // Количество филиалов
@@ -107,10 +99,7 @@ const Calculator = (props: CalculatorProps) => {
             `)
 
         try {
-            await fetch('https://demo.qeep.pro/process/application', {
-                method: 'POST',
-                body: formData
-            })
+            await sendApplication(formData)
             reset()
             toast.success(
                 'Благодарим вас! Мы обязательно свяжемся с вами в ближайшее время.', {
