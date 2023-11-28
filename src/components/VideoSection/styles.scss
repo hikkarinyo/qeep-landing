@@ -17,11 +17,6 @@
     grid-row-gap: 20px;
   }
 
-  &__video {
-    min-width: 500px;
-    min-height: 360px;
-  }
-
   @media screen and (max-width: 768px) {
     &__wrapper {
       flex-direction: column;

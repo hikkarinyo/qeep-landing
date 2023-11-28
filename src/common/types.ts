@@ -15,7 +15,7 @@ export interface ButtonProps {
 }
 
 export interface CardProps {
-    children: React.ReactNode
+    children?: React.ReactNode
     className?: string
 }
 export interface ModalProps {

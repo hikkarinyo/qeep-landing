@@ -27,16 +27,14 @@ const VideoSection = () => {
                         </h1>
                         <Button children='Оставить заявку' onClick={handleOpenModal}/>
                     </div>
-                    <div className={cx('video-section__video')}>
-                        <iframe
-                            width='100%' height='100%'
-                            src='https://www.youtube.com/embed/OLCZhDFgej8?si=pL4IQasakf9igXLu'
-                            title='YouTube video player' frameBorder='0'
-                            allow='accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share'
-                            allowFullScreen
-                        >
-                        </iframe>
-                    </div>
+                    <iframe
+                        width='100%' height='400px'
+                        src='https://www.youtube.com/embed/OLCZhDFgej8?si=pL4IQasakf9igXLu'
+                        title='YouTube video player' frameBorder='0'
+                        allow='accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share'
+                        allowFullScreen
+                    >
+                    </iframe>
                 </div>
             </section>
             <Modal isOpen={isOpen} onClose={handleCloseModal}>

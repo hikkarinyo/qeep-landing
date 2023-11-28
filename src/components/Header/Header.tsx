@@ -11,7 +11,7 @@ const Header = () => {
     const navLinks = [
         { to: '/#possibilities', text: 'Возможности' },
         // Блоки пока недоделаны
-        // { to: '/#advantages', text: 'Преимущества' },
+        { to: '/#advantages', text: 'Преимущества' },
         // { to: '/#workDescription', text: 'Как это работает' },
         { to: '/#portfolio', text: 'Наши работы' },
         { to: '/#calculator', text: 'Калькулятор' },

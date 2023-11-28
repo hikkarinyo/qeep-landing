@@ -13,6 +13,7 @@ import VideoSection from '../components/VideoSection/VideoSection'
 import { Loader } from '../common/Loader/Loader'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
+import Advantages from '../components/Advantages/Advantages'
 
 const Home = () => {
     const location = useLocation()
@@ -45,7 +46,7 @@ const Home = () => {
                     <Benefit id='benefit'/>
                     <Possibilities id='possibilities'/>
                     {/*Блок пока недоделаны*/}
-                    {/*<AppTabs id='advantages/>*/}
+                    <Advantages id='advantages'/>
                     {/*<WorkDescription id='workDescription'/>*/}
                     <Portfolio id='portfolio'/>
                     <Calculator id='calculator'/>

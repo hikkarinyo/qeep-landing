@@ -1,0 +1,71 @@
+@import '../../assets/colors';
+
+.advantages {
+  background-color: $secondary;
+  padding-top: 50px;
+
+  &__title {
+    color: $accent;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 50px;
+  }
+
+  &__cards {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+
+    &-two {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 10px;
+      grid-column-gap: 10px;
+    }
+  }
+
+  &__card {
+    background-color: $bg-black-card;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 20px;
+    padding: 40px;
+
+    &-title {
+      color: $accent;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      grid-row-gap: 10px;
+    }
+
+    &-list-item {
+      list-style-type: none;
+      color: $accent;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:before {
+        content: "—";
+        margin-right: 10px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
