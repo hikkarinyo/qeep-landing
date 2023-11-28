@@ -30,7 +30,7 @@ const Testimonials = (props: TestimonialsProps) => {
             id: 3,
             logo: '/images/testimonials/vt/logo-vt.svg',
             text: 'Когда мне понадобилось протестировать гипотезу: а зайдёт ли мобильное приложение для заказа в моей нише, я находил самые дешевые решения для создания мобильных приложений — от 2 млн.рублей. Просто для теста такое явно не годилось. Когда я обратился в QEEP-Pro, мне сказали, что приложение будет доступно в App Store и Google Play уже через 2 дня, а запуститься стоило всего 30 т.р. Это просто сказка!',
-            photo: '/images/testimonials/vt/author-vt.png',
+            photo: '/images/testimonials/vt/author-vt.jpg',
             fullName: 'Павел Мамаев',
             position: 'Генеральный директор SUPPLEMENT.GROUP',
         },
@@ -45,12 +45,12 @@ const Testimonials = (props: TestimonialsProps) => {
                         {testimonials.map((testimonials) => (
                             <Card key={testimonials.id} className={cx('testimonials__card', 'card')}>
                                 <div className={cx('card__logo')}>
-                                    <img src={testimonials.logo} alt='Логотип'/>
+                                    <img src={testimonials.logo} alt='Логотип' draggable='false' />
                                 </div>
                                 <p>{testimonials.text}</p>
                                 <div className={cx('card__testimonial-author')}>
                                     <div className={cx('card__photo')}>
-                                        <img src={testimonials.photo} alt='Фото'/>
+                                        <img src={testimonials.photo} alt='Фото' draggable='false' />
                                     </div>
                                     <div className={cx('card__text')}>
                                         <p className={cx('card__text-fullname')}>{testimonials.fullName}</p>

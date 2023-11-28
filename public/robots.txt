@@ -1,0 +1,4 @@
+User-agent: *
+Allow: https://qeep.pro/
+
+Sitemap: https://qeep.pro/sitemap.xml
