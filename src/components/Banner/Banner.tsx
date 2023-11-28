@@ -41,10 +41,7 @@ const Banner = (props: BannerProps) => {
                     <div className={cx('banner__wrapper-right')}>
                         <div className={cx('banner__video-overlay')}>
                             <video className={cx('banner__video')} autoPlay loop muted>
-                                <source
-                                    src='https://dl.dropboxusercontent.com/s/rk11werygt8m7zh/rebro-720.mp4?dl=0'
-                                    type='video/mp4'
-                                />
+                                <source src='/video/rebro-720.mp4' type='video/mp4'/>
                             </video>
                         </div>
                         <img className={cx('banner__iphone')} src='/images/rebro/pre-loader.png' alt='iphone'/>

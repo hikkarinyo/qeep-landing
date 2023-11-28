@@ -80,6 +80,10 @@ module.exports = {
                     from: path.resolve(__dirname, '..', './public/doc'),
                     to: path.resolve(__dirname, '..', './build/doc'),
                 },
+                {
+                    from: path.resolve(__dirname, '..', './public/video'),
+                    to: path.resolve(__dirname, '..', './build/video'),
+                }
             ]
         })
     ]
