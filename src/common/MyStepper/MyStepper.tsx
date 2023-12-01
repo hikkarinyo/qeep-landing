@@ -3,10 +3,10 @@ import classNames from 'classnames'
 import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
-import { Button } from '../../common/Button/Button'
-import { SvgIcon } from '../../common/SvgIcon/SvgIcon'
-import Form from '../../common/Form/Form'
-import { Modal } from '../../common/Modal/Modal'
+import { Button } from '../Button/Button'
+import { SvgIcon } from '../SvgIcon/SvgIcon'
+import Form from '../Form/Form'
+import { Modal } from '../Modal/Modal'
 import { StepIconProps, styled, useMediaQuery } from '@mui/material'
 import { useInView } from 'react-intersection-observer'
 
@@ -150,13 +150,13 @@ const MyStepper = () => {
                     ) : (
                         <div className={cx('my-stepper__content')}>
                             <div className={cx('my-stepper__wrapper-content')}>
-                                <p className={cx('my-stepper__finall-text')}>
+                                <p className={cx('my-stepper__finally-text')}>
                                     Готовы начать улучшение своего бизнеса с нашими инновационными решениями?
                                 </p>
                                 <Button onClick={handleOpenModal}>Оставить заявку</Button>
                             </div>
                             <div className={cx('my-stepper__image')}>
-                                <SvgIcon src={'profit.svg'} height="500" width="500" />
+                                <SvgIcon src={'/stepper/profit.svg'} height="500" width="500" />
                             </div>
                         </div>
                     )}

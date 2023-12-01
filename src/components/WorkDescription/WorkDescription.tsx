@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import MyStepper from '../MyStepper/MyStepper'
+import MyStepper from '../../common/MyStepper/MyStepper'
 
 const cx = classNames.bind(require('./styles.scss'))
 
