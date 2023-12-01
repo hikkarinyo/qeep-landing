@@ -14,6 +14,7 @@ import { Loader } from '../common/Loader/Loader'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Advantages from '../components/Advantages/Advantages'
+import WorkDescription from '../components/WorkDescription/WorkDescription'
 
 const Home = () => {
     const location = useLocation()
@@ -45,9 +46,8 @@ const Home = () => {
                     <Banner id='banner'/>
                     <Benefit id='benefit'/>
                     <Possibilities id='possibilities'/>
-                    {/*Блок пока недоделаны*/}
                     <Advantages id='advantages'/>
-                    {/*<WorkDescription id='workDescription'/>*/}
+                    <WorkDescription id='HowItWorks'/>
                     <Portfolio id='portfolio'/>
                     <Calculator id='calculator'/>
                     <Testimonials id='testimonials'/>

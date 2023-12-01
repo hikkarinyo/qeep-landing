@@ -59,45 +59,43 @@ const Form = ({onCloseModal}: FormProps) => {
 
 
     return (
-        <>
+        <form className={cx('form')} onSubmit={submit}>
             <h1 className={cx('form__title')}>Отправить заявку</h1>
-            <form className={cx('form')} onSubmit={submit}>
-                <MyInput
-                    label='Имя'
-                    name='name'
-                    register={register}
-                    error={errors.name?.message}
-                    variant='input'
-                />
-                <MyPhoneInput
-                    label='Телефон'
-                    name='phone'
-                    mask='+7 (999) 999-99-99'
-                    control={control}
-                    error={errors.phone?.message}
-                    variant='input'
-                />
-                <MyInput
-                    label='Название компании'
-                    name='companyName'
-                    register={register}
-                    error={errors.companyName?.message}
-                    variant='input'
-                />
-                <MyInput
-                    label='Комментарий'
-                    name='comment'
-                    register={register}
-                    error={errors.comment?.message}
-                    variant='input'
-                />
-                <Button disabled={isDisabled} type='submit'>Отправить</Button>
-                <p className={cx('form__personal-information')}>
-                    Нажимая на кнопку, вы даете согласие на обработку
-                    <a href='/doc/privacy-policy.pdf' className={cx('form__link')} target='_blank'>персональных данных</a>
-                </p>
-            </form>
-        </>
+            <MyInput
+                label='Имя'
+                name='name'
+                register={register}
+                error={errors.name?.message}
+                variant='input'
+            />
+            <MyPhoneInput
+                label='Телефон'
+                name='phone'
+                mask='+7 (999) 999-99-99'
+                control={control}
+                error={errors.phone?.message}
+                variant='input'
+            />
+            <MyInput
+                label='Название компании'
+                name='companyName'
+                register={register}
+                error={errors.companyName?.message}
+                variant='input'
+            />
+            <MyInput
+                label='Комментарий'
+                name='comment'
+                register={register}
+                error={errors.comment?.message}
+                variant='input'
+            />
+            <Button disabled={isDisabled} type='submit'>Отправить</Button>
+            <p className={cx('form__personal-information')}>
+                Нажимая на кнопку, вы даете согласие на обработку
+                <a href='/doc/privacy-policy.pdf' className={cx('form__link')} target='_blank'>персональных данных</a>
+            </p>
+        </form>
     )
 }
 

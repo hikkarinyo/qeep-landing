@@ -39,7 +39,13 @@ const Banner = (props: BannerProps) => {
                     </div>
                     <div className={cx('banner__wrapper-right')}>
                         <div className={cx('banner__video-overlay')}>
-                            <video className={cx('banner__video')} autoPlay loop muted>
+                            <video
+                                className={cx('banner__video')}
+                                autoPlay
+                                loop
+                                muted
+                                poster='/images/rebro/pre-loader.png'
+                            >
                                 <source src='/video/rebro-720.mp4' type='video/mp4'/>
                             </video>
                         </div>

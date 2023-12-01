@@ -1,0 +1,87 @@
+@import '../../assets/colors';
+
+.my-stepper {
+
+  &__title {
+    color: $secondary;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 10px 0;
+  }
+
+  &__description {
+    color: $secondary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__finally-text {
+    color: $secondary;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  &__btns {
+    display: flex;
+    grid-column-gap: 10px;
+
+    .button {
+      max-width: 100px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+
+    &__wrapper {
+      flex-direction: row;
+    }
+
+    &__content {
+      flex-direction: column-reverse;
+    }
+
+    &__btns {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+
+    &__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
