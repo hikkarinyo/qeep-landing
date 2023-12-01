@@ -10,9 +10,8 @@ const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
     const navLinks = [
         { to: '/#possibilities', text: 'Возможности' },
-        // Блоки пока недоделаны
         { to: '/#advantages', text: 'Преимущества' },
-        // { to: '/#workDescription', text: 'Как это работает' },
+        { to: '/#HowItWorks', text: 'Как это работает' },
         { to: '/#portfolio', text: 'Наши работы' },
         { to: '/#calculator', text: 'Калькулятор' },
         { to: '/#testimonials', text: 'Отзывы' },
