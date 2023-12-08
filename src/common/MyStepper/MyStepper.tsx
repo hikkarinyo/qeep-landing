@@ -5,7 +5,7 @@ import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import { Button } from '../Button/Button'
 import { SvgIcon } from '../SvgIcon/SvgIcon'
-import Form from '../Form/Form'
+import ClientForm from '../Forms/ClientForm'
 import { Modal } from '../Modal/Modal'
 import { StepIconProps, styled, useMediaQuery } from '@mui/material'
 import { useInView } from 'react-intersection-observer'
@@ -173,7 +173,7 @@ const MyStepper = () => {
                 </div>
             </div>
             <Modal isOpen={isOpen} onClose={handleCloseModal}>
-                <Form onCloseModal={handleCloseModal} />
+                <ClientForm onCloseModal={handleCloseModal} />
             </Modal>
         </>
     )

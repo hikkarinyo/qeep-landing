@@ -63,7 +63,7 @@ const Advantages = (props: AdvantagesProps) => {
     return (
         <section id={props.id} className={cx('advantages')}>
             <div className={cx('container')}>
-                <h1 className={cx('advantages__title')}>Зачем мы?</h1>
+                <h1 className={cx('advantages__title')}>Почему мы?</h1>
                 <div className={cx('advantages__cards--3columns')}>
                     {firstSectionData.map((advantage, index) => (
                         <AdvantageCard key={index} {...advantage} />

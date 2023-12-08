@@ -1,0 +1,142 @@
+@import '../../assets/colors';
+
+.vacancy-details {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: center;
+    margin: 60px 0;
+  }
+
+  &__task-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+
+    .button {
+      margin: 20px 0 0;
+      max-width: 300px;
+      background: $primary;
+      border: none;
+      color: $accent;
+
+      &:hover,
+      &:active {
+        background-color: $link-hover-color;
+      }
+
+      &:disabled {
+        background-color: $button-bg-disabled-color;
+        border-color: $button-bg-disabled-color;
+        cursor: default;
+        color: $accent;
+      }
+    }
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__title {
+    color: $secondary;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__card {
+    background-color: $bg-white-card;
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    height: fit-content;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, .1);
+
+    &-title {
+      font-weight: 500;
+      line-height: normal;
+      font-size: 24px;
+      color: $secondary;
+    }
+
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      list-style-type: none;
+      color: $secondary;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding-bottom: 8px;
+      padding-top: 8px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:before {
+        content: "—";
+        margin-right: 10px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+
+    &-wrapper-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+
+    &-title {
+      font-weight: 500;
+      line-height: normal;
+      font-size: 32px;
+      color: $secondary;
+    }
+
+    &-text {
+      font-weight: 400;
+      line-height: normal;
+      font-size: 18px;
+      color: $secondary;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__task-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+
+      .button {
+        max-width: 100%;
+      }
+    }
+  }
+}

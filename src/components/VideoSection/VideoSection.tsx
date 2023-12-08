@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import { Modal } from '../../common/Modal/Modal'
 import { Button } from '../../common/Button/Button'
-import Form from '../../common/Form/Form'
+import ClientForm from '../../common/Forms/ClientForm'
 
 const cx = classNames.bind(require('./styles.scss'))
 
@@ -38,7 +38,7 @@ const VideoSection = () => {
                 </div>
             </section>
             <Modal isOpen={isOpen} onClose={handleCloseModal}>
-                <Form onCloseModal={handleCloseModal}/>
+                <ClientForm onCloseModal={handleCloseModal}/>
             </Modal>
         </>
     )

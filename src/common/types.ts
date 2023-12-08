@@ -42,7 +42,7 @@ export interface SliderProps {
 }
 
 export interface FormProps {
-    onCloseModal: () => void
+    onCloseModal?: () => void
 }
 
 export interface BlackFridayProps {
@@ -56,7 +56,17 @@ export interface InputProps {
     error?: string
     register?: any
     onChange?: () => void
-    variant: "input" | "outline" | "textarea"
+    variant: "my-input" | "input-outline"
+}
+
+export interface TextareaProps {
+    label: string
+    value?: string
+    name: string
+    error?: string
+    register?: any
+    onChange?: () => void
+    variant: "my-textarea" | "textarea-outline"
 }
 
 export interface PhoneInputProps {
@@ -67,5 +77,5 @@ export interface PhoneInputProps {
     error?: string
     control?: any
     onChange?: () => void
-    variant: "input" | "outline"
+    variant: "my-input" | "input-outline"
 }

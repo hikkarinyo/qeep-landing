@@ -1,0 +1,73 @@
+@import '../../assets/colors';
+
+.our-vacancies {
+  padding: 50px 0;
+
+  &__title {
+    color: $secondary;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  &__card {
+    background-color: $bg-white-card;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 12px 12px rgba(0,0,0,.1);
+
+    &:hover {
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    &-title {
+      color: $secondary;
+      font-weight: 700;
+      line-height: normal;
+      font-size: 24px;
+    }
+
+    &-description {
+      color: $secondary;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: normal;
+      text-decoration: none;
+      cursor: pointer;
+      margin-left: auto;
+      width: fit-content;
+      background-color: rgba(231, 60, 30, 0.16);
+      padding: 10px;
+      border-radius: 10px;
+      color: $primary;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

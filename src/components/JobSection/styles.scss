@@ -1,0 +1,57 @@
+@import '../../assets/colors';
+
+.job-section {
+  background-color: $secondary;
+  color: $accent;
+  padding: 50px 0 10px;
+
+  &__wrapper {
+    display: flex;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    align-items: flex-start;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+    color: $accent;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__link {
+    text-decoration: none;
+    max-width: 200px;
+    background-color: $primary;
+    color: $accent;
+    border: 1px solid $secondary;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 13px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    &:hover,
+    &:active {
+      background-color: $primary;
+      border-color: $primary;
+      color: $accent;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import { MyInput } from '../../common/MyInput/MyInput'
 import { MyPhoneInput } from '../../common/MyInput/MyPhoneInput'
 import { sendApplication } from '../../api'
 import { schemaCalculator } from '../../helpers/validation'
+import { MyTextarea } from '../../common/MyTextarea/MyTextarea'
 
 const cx = classNames.bind(require('./styles.scss'))
 
@@ -131,7 +132,7 @@ const Calculator = (props: CalculatorProps) => {
                                     name='name'
                                     register={register}
                                     error={errors.name?.message}
-                                    variant='outline'
+                                    variant='input-outline'
                                 />
                                 <MyPhoneInput
                                     label='Телефон'
@@ -139,21 +140,21 @@ const Calculator = (props: CalculatorProps) => {
                                     mask='+7 (999) 999-99-99'
                                     control={control}
                                     error={errors.phone?.message}
-                                    variant='outline'
+                                    variant='input-outline'
                                 />
                                 <MyInput
                                     label='Название компании'
                                     name='companyName'
                                     register={register}
                                     error={errors.companyName?.message}
-                                    variant='outline'
+                                    variant='input-outline'
                                 />
-                                <MyInput
+                                <MyTextarea
                                     label='Комментарий'
                                     name='comment'
                                     register={register}
                                     error={errors.comment?.message}
-                                    variant='textarea'
+                                    variant='textarea-outline'
                                 />
                             </div>
                             <div className={cx('calculator__sliders')}>

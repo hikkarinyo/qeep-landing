@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import { Button } from '../../common/Button/Button'
 import { Modal } from '../../common/Modal/Modal'
-import Form from '../../common/Form/Form'
-import { BlackFriday } from '../../common/BlackFriday/BlackFriday'
+import ClientForm from '../../common/Forms/ClientForm'
 
 
 const cx = classNames.bind(require('./styles.scss'))
@@ -27,13 +26,14 @@ const Banner = (props: BannerProps) => {
         <>
             <section id={props.id} className={cx('banner', 'container')}>
                 <div className={cx('banner__wrapper')}>
+                    <img className={cx('banner__arrow')} src='/images/arrow.png' alt='arrow'/>
                     <div className={cx('banner__wrapper-left')}>
-                        <BlackFriday className={cx('banner__BlackFriday')} />
-                        <p className={cx('banner__text')}>
+                        <p className={cx('banner__title')}>
                             Готовое приложение для вашей доставки за 2 дня
                         </p>
-                        <p className={cx('banner__subText')}>
-                            Скидка <span>30%</span> на месячное обслуживание с оплатой на любой период
+                        <p className={cx('banner__text')}>
+                            Наши клиенты увеличивают свой доход на 10-25%
+                            уже через 3 месяца
                         </p>
                         <Button children={'Оставить заявку'} onClick={handleOpenModal}/>
                     </div>
@@ -44,7 +44,7 @@ const Banner = (props: BannerProps) => {
                                 autoPlay
                                 loop
                                 muted
-                                poster='/images/rebro/pre-loader.png'
+                                poster='/images/rebro/poster.jpg'
                             >
                                 <source src='/video/rebro-720.mp4' type='video/mp4'/>
                             </video>
@@ -52,11 +52,11 @@ const Banner = (props: BannerProps) => {
                         <img className={cx('banner__iphone')} src='/images/rebro/pre-loader.png' alt='iphone'/>
                     </div>
                     <p className={cx('banner__disclaimer')}>
-                        *Черная пятница пройдёт с 24 по 30 ноября.
+                        *Рассчитать рост вашего дохода поможет наш финансовый аналитик
                     </p>
                 </div>
             </section>
-            <Modal isOpen={isOpen} onClose={handleCloseModal}><Form onCloseModal={handleCloseModal}/></Modal>
+            <Modal isOpen={isOpen} onClose={handleCloseModal}><ClientForm onCloseModal={handleCloseModal}/></Modal>
        </>
     )
 }

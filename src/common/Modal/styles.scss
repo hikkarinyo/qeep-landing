@@ -28,6 +28,7 @@
   transition: 0.4s all;
   width: 50vh;
   margin: 0 50px;
+  border-radius: 5px;
 
   &.open {
     transform: scale(1);

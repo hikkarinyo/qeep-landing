@@ -8,18 +8,19 @@ import { toast, Slide } from 'react-toastify'
 import { MyInput } from '../MyInput/MyInput'
 import { MyPhoneInput } from '../MyInput/MyPhoneInput'
 import { sendApplication } from '../../api'
-import { schemaForm } from '../../helpers/validation'
+import { schemaClientForm } from '../../helpers/validation'
+import { MyTextarea } from '../MyTextarea/MyTextarea'
 
 
 const cx = classNames.bind(require('./styles.scss'))
 
-const Form = ({onCloseModal}: FormProps) => {
+const ClientForm = ({onCloseModal}: FormProps) => {
     const {
         register, handleSubmit, formState: {errors},
         reset, control
     } = useForm({
         mode: 'onBlur',
-        resolver: yupResolver(schemaForm),
+        resolver: yupResolver(schemaClientForm),
     })
     const [isDisabled, setIsDisabled] = useState(false)
 
@@ -34,7 +35,9 @@ const Form = ({onCloseModal}: FormProps) => {
             setIsDisabled(true)
             await sendApplication(formData)
             reset()
-            onCloseModal()
+            if (onCloseModal) {
+                onCloseModal()
+            }
             toast.success(
                 'Благодарим вас! Мы обязательно свяжемся с вами в ближайшее время.', {
                     position: toast.POSITION.TOP_RIGHT,
@@ -66,7 +69,7 @@ const Form = ({onCloseModal}: FormProps) => {
                 name='name'
                 register={register}
                 error={errors.name?.message}
-                variant='input'
+                variant='my-input'
             />
             <MyPhoneInput
                 label='Телефон'
@@ -74,21 +77,21 @@ const Form = ({onCloseModal}: FormProps) => {
                 mask='+7 (999) 999-99-99'
                 control={control}
                 error={errors.phone?.message}
-                variant='input'
+                variant='my-input'
             />
             <MyInput
                 label='Название компании'
                 name='companyName'
                 register={register}
                 error={errors.companyName?.message}
-                variant='input'
+                variant='my-input'
             />
-            <MyInput
+            <MyTextarea
                 label='Комментарий'
                 name='comment'
                 register={register}
                 error={errors.comment?.message}
-                variant='input'
+                variant='my-textarea'
             />
             <Button disabled={isDisabled} type='submit'>Отправить</Button>
             <p className={cx('form__personal-information')}>
@@ -99,4 +102,4 @@ const Form = ({onCloseModal}: FormProps) => {
     )
 }
 
-export default Form
+export default ClientForm

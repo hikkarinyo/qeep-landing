@@ -26,16 +26,29 @@
   &__title {
     color: $footer-text-color;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    margin-bottom: 10px;
   }
 
   &__text {
     color: $footer-text-color;
     font-size: 16px;
-    font-weight: 300;
-    text-decoration: none;
+    font-weight: 400;
   }
 
+  &__link {
+    text-decoration: none;
+    color: $footer-text-color;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  &__link-logo {
+    cursor: pointer;
+    width: fit-content;
+  }
 
   @media screen and (max-width: 768px) {
     &__wrapper {

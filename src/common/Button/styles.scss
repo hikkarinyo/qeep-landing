@@ -2,7 +2,7 @@
 
 .button {
   font-family: 'Roboto', sans-serif;
-  background: $accent;
+  background-color: transparent;
   color: $secondary;
   border: 1px solid $secondary;
   font-size: 16px;
@@ -11,7 +11,7 @@
   height: 55px;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 13px 0;
+  padding: 13px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
